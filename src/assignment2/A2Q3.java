@@ -22,12 +22,71 @@ public class A2Q3 {
         //create city
         City kw = new City();
         //create robot
-        Robot karel = new Robot(kw, 3, 5, Direction.EAST);
-        //loop
-        while(karel.getStreet()!= 0){
-            if(karel.getDirection()== Direction.NORTH);{
-            karel.move();
-        }else
-            
+        Robot karel = new Robot(kw, 7, 5, Direction.EAST);
+        //loop for positive streets
+        while (karel.getStreet() > 0) {
+
+            if (karel.getDirection() == Direction.NORTH) {
+                karel.move();
+            } else if (karel.getDirection() == Direction.SOUTH) {
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.move();
+            } else if (karel.getDirection() == Direction.EAST) {
+                karel.turnLeft();
+                karel.move();
+            } else if (karel.getDirection() == Direction.WEST) {
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.move();
+            }
+        }
+        //loop for negative streets
+        while (karel.getStreet() < 0) {
+            if (karel.getDirection() == Direction.NORTH) {
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.move();
+            } else if (karel.getDirection() == Direction.SOUTH) {
+                karel.move();
+            } else if (karel.getDirection() == Direction.EAST) {
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.move();
+            } else if (karel.getDirection() == Direction.WEST) {
+                karel.turnLeft();
+                karel.move();
+            }
+
+        }
+        //loop for positive avenues
+        while (karel.getAvenue() > 0) {
+            if (karel.getDirection() == Direction.NORTH) {
+                karel.turnLeft();
+                karel.move();
+            }else if (karel.getDirection() == Direction.SOUTH) {
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.move();
+            } else if (karel.getDirection() == Direction.WEST) {
+                karel.move();
+            }
+        }
+        //loop for negative avenues
+        while (karel.getAvenue() < 0) {
+            if (karel.getDirection() == Direction.NORTH) {
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.move();
+            } else if (karel.getDirection() == Direction.SOUTH) {
+                karel.turnLeft();
+                karel.move();
+            } else if (karel.getDirection() == Direction.EAST) {
+                karel.move();
+            }
+        }
     }
-}
