@@ -6,6 +6,7 @@ package assignment2;
 
 import becker.robots.City;
 import becker.robots.Direction;
+import becker.robots.Robot;
 import becker.robots.Wall;
 
 /**
@@ -42,5 +43,34 @@ public class A2Q4 {
         new Wall(kw, 4, 4, Direction.WEST);
         new Wall(kw, 4, 4, Direction.SOUTH);
         new Wall(kw, 4, 4, Direction.EAST);
+        new Wall(kw, 1, 4, Direction.WEST);
+        new Wall(kw, 1, 4, Direction.NORTH);
+        new Wall(kw, 1, 4, Direction.EAST);
+        new Wall(kw, 1, 4, Direction.SOUTH);
+
+        //creating robot
+        Robot karel = new Robot(kw, 0, 0, Direction.EAST);
+
+        //loop
+        while (true) {
+            karel.move();
+            karel.move();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.move();
+            karel.turnLeft();
+            karel.move();
+            karel.turnLeft();
+            karel.move();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.move();
+            karel.move();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.turnLeft();
+        }
     }
 }
