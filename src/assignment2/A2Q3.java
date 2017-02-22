@@ -66,7 +66,7 @@ public class A2Q3 {
             if (karel.getDirection() == Direction.NORTH) {
                 karel.turnLeft();
                 karel.move();
-            }else if (karel.getDirection() == Direction.SOUTH) {
+            } else if (karel.getDirection() == Direction.SOUTH) {
                 karel.turnLeft();
                 karel.turnLeft();
                 karel.turnLeft();
