@@ -38,20 +38,20 @@ public class A2Q1 {
 
         // move karel
         karel.move();
-        
+
         //pick up first thing
         karel.pickThing();
-        
+
         //loop to make karel walk
         while (karel.frontIsClear()) {
             karel.move();
-            
+
             //while he walks he counts his things until he gets 7 and picks up
             if (karel.countThingsInBackpack() < 7) {
                 karel.pickThing();
                 //if he cant pick up anything, he stops
-            }else if(karel.canPickThing()==false)
+            } else if (karel.canPickThing() == false) {
                 break;
-            
+            }
+
         }
-        
